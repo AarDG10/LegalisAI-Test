@@ -16,5 +16,7 @@ A specialized legal assistant leveraging the power of the **InLegalBERT** model 
   - Relevant sections of law
   - Relevancy score of sections
   - Strong and weak points associated with the case
+- **Added Features**
+  - Language Compatibility (Eng/Hindi/Marathi)
  
 ## Note-A Custom Dataset was used which cannot be made publicly available at the moment.
