@@ -1,0 +1,11 @@
+streamlit
+requests
+httpx>=0.23,<1.0
+h2
+
+# googletrans==4.0.0-rc1 hard-pins httpx==0.13.3 (2020-era, incompatible with
+# Python 3.13+ which dropped the stdlib `cgi` module httpx used to depend on).
+# Installing it in the same resolve as the httpx pin above causes pip to fail
+# with ResolutionImpossible, even though the package works fine with modern
+# httpx in practice. Install it separately, ignoring its stale dependency pin:
+#   pip install googletrans==4.0.0-rc1 --no-deps

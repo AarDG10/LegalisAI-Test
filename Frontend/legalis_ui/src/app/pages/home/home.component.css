@@ -1,8 +1,0 @@
-/* Optional Flexbox layout */
-.main-container {
-    margin-top: 5em;
-    display: flex;
-    flex-direction: column; 
-    /* height: 100vh;   */   /*will have to check if needed later*/   
-  }
-  
