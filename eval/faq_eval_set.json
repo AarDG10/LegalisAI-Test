@@ -1,0 +1,62 @@
+[
+  {
+    "query": "Can I sell open parking spaces to flat buyers?",
+    "relevant_prompts": ["Is it permissible to sell parking to allottees?"]
+  },
+  {
+    "query": "What happens if a promoter doesn't register their project at all?",
+    "relevant_prompts": ["What is the penalty prescribed for non-registration of a project?"]
+  },
+  {
+    "query": "How do I find out if a project I'm interested in is actually registered with MahaRERA?",
+    "relevant_prompts": ["How will a flat buyer know, if the real estate project is duly registered under MahaRERA?"]
+  },
+  {
+    "query": "Does the promoter have to commit to a completion deadline when registering a project?",
+    "relevant_prompts": ["Is the promoter required to give any undertaking to MahaRERA for completing his project within a specified period?"]
+  },
+  {
+    "query": "If MahaRERA cancels a builder's registration, what happens to buyers who already paid?",
+    "relevant_prompts": ["If the registration of a real estate project is revoked for any reason, how will the interest of the buyer, in such project, be protected by MahaRERA?"]
+  },
+  {
+    "query": "Am I automatically entitled to interest if my possession is delayed, or do I need to do something?",
+    "relevant_prompts": ["Will interest payment by the promoter to the buyer be automatic or the buyer will have to approach MahaRERA?"]
+  },
+  {
+    "query": "Is there a cap on how much interest a builder can charge me if I miss an installment payment?",
+    "relevant_prompts": ["Is there a ceiling on the interest to be levied by the promoter in case of default in payment of any instalments by the allottee/buyer?"]
+  },
+  {
+    "query": "Can I sue my builder in a regular civil court instead of going to MahaRERA?",
+    "relevant_prompts": ["If the buyer wants to file a suit in civil court, is there any bar under the Act?"]
+  },
+  {
+    "query": "How do I appeal a MahaRERA order I disagree with, and what does it cost?",
+    "relevant_prompts": ["Is there an appeal provided against the orders given by MahaRERA? Is there a time limit? What are the fees?"]
+  },
+  {
+    "query": "By when must the builder help set up a housing society for the flat owners?",
+    "relevant_prompts": ["Is there any time limit prescribed for the promoter for formation of society or any other legal entity of home buyers?"]
+  },
+  {
+    "query": "How long after getting the occupancy certificate does the builder have to transfer ownership via conveyance deed?",
+    "relevant_prompts": ["Is there a time limit prescribed for the promoter to execute conveyance in favor of the association of buyers?"]
+  },
+  {
+    "query": "What is the legal remedy for property fraud in India?",
+    "relevant_prompts": ["What are the legal remedies for property fraud?"]
+  },
+  {
+    "query": "How can I verify that a seller actually owns the property before I buy it?",
+    "relevant_prompts": ["How can a buyer verify property ownership before purchase?"]
+  },
+  {
+    "query": "What's the process to transfer property after someone dies without a will?",
+    "relevant_prompts": ["What are the legal procedures for transferring property after a person's death?"]
+  },
+  {
+    "query": "What tax do I need to pay when I sell a property?",
+    "relevant_prompts": ["What are the tax implications of selling a property?"]
+  }
+]

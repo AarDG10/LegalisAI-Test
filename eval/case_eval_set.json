@@ -1,0 +1,62 @@
+[
+  {
+    "query": "The builder's draft agreement for sale contradicts the cost sheet I was shown at booking, and I've only paid 4% so far — what are my rights?",
+    "relevant_case_ids": ["case_001"]
+  },
+  {
+    "query": "How can I confirm my booked flats are correctly shown as sold inventory on the MahaRERA website?",
+    "relevant_case_ids": ["case_003"]
+  },
+  {
+    "query": "I took possession of my flat years ago but the builder never obtained an occupancy certificate — can I still claim compensation?",
+    "relevant_case_ids": ["case_006"]
+  },
+  {
+    "query": "The builder I bought from has been admitted into insolvency proceedings and there's a moratorium — can I still get relief through MahaRERA right now?",
+    "relevant_case_ids": ["case_008", "case_018", "case_026", "case_028"]
+  },
+  {
+    "query": "My builder transferred our project to a different developer without getting proper allottee consent — what recourse do I have?",
+    "relevant_case_ids": ["case_014"]
+  },
+  {
+    "query": "The builder constructed extra buildings on land that was meant to be common amenities in our project — is that a RERA violation?",
+    "relevant_case_ids": ["case_022"]
+  },
+  {
+    "query": "My builder claims I can't file with RERA because our sale agreement has an arbitration clause — is that true?",
+    "relevant_case_ids": ["case_025", "case_044"]
+  },
+  {
+    "query": "Our project's RERA registration lapsed and construction stalled — can we allottees form an association to complete it ourselves?",
+    "relevant_case_ids": ["case_034"]
+  },
+  {
+    "query": "The builder abandoned our project and offered a refund, but we want possession of our flats instead — what can MahaRERA do?",
+    "relevant_case_ids": ["case_035"]
+  },
+  {
+    "query": "The builder blames COVID-19 for a multi-year delay in handing over my flat — does that excuse them from paying compensation?",
+    "relevant_case_ids": ["case_017"]
+  },
+  {
+    "query": "The builder never built the school, hospital, and lift they promised in the brochure — what can I claim under RERA?",
+    "relevant_case_ids": ["case_020"]
+  },
+  {
+    "query": "I originally sought a refund but now want possession instead after my case was remanded on appeal — can I change the relief I'm seeking?",
+    "relevant_case_ids": ["case_037"]
+  },
+  {
+    "query": "MahaRERA revoked our builder's registration for failing to complete construction — what happens to our flats now?",
+    "relevant_case_ids": ["case_049"]
+  },
+  {
+    "query": "My builder never signed a formal agreement for sale with me even though the project is almost complete and I've paid a lot already — what should I do?",
+    "relevant_case_ids": ["case_012"]
+  },
+  {
+    "query": "The commercial shop I purchased has a smaller carpet area than promised and doesn't meet BMC building norms — what are my options?",
+    "relevant_case_ids": ["case_030"]
+  }
+]

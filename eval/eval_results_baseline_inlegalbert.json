@@ -1,0 +1,234 @@
+{
+  "case_retrieval": {
+    "summary": {
+      "n_queries": 15,
+      "MRR": 0.28518518518518515,
+      "hit_rate@1": 0.26666666666666666,
+      "hit_rate@3": 0.26666666666666666,
+      "hit_rate@5": 0.26666666666666666
+    },
+    "per_query": [
+      {
+        "query": "The builder's draft agreement for sale contradicts the cost sheet I was shown at booking, and I've only paid 4% so far \u2014 what are my rights?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "How can I confirm my booked flats are correctly shown as sold inventory on the MahaRERA website?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "I took possession of my flat years ago but the builder never obtained an occupancy certificate \u2014 can I still claim compensation?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The builder I bought from has been admitted into insolvency proceedings and there's a moratorium \u2014 can I still get relief through MahaRERA right now?",
+        "reciprocal_rank": 1.0,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true
+      },
+      {
+        "query": "My builder transferred our project to a different developer without getting proper allottee consent \u2014 what recourse do I have?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The builder constructed extra buildings on land that was meant to be common amenities in our project \u2014 is that a RERA violation?",
+        "reciprocal_rank": 1.0,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true
+      },
+      {
+        "query": "My builder claims I can't file with RERA because our sale agreement has an arbitration clause \u2014 is that true?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "Our project's RERA registration lapsed and construction stalled \u2014 can we allottees form an association to complete it ourselves?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The builder abandoned our project and offered a refund, but we want possession of our flats instead \u2014 what can MahaRERA do?",
+        "reciprocal_rank": 0.1111111111111111,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The builder blames COVID-19 for a multi-year delay in handing over my flat \u2014 does that excuse them from paying compensation?",
+        "reciprocal_rank": 0.16666666666666666,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The builder never built the school, hospital, and lift they promised in the brochure \u2014 what can I claim under RERA?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "I originally sought a refund but now want possession instead after my case was remanded on appeal \u2014 can I change the relief I'm seeking?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "MahaRERA revoked our builder's registration for failing to complete construction \u2014 what happens to our flats now?",
+        "reciprocal_rank": 1.0,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true
+      },
+      {
+        "query": "My builder never signed a formal agreement for sale with me even though the project is almost complete and I've paid a lot already \u2014 what should I do?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "The commercial shop I purchased has a smaller carpet area than promised and doesn't meet BMC building norms \u2014 what are my options?",
+        "reciprocal_rank": 1.0,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true
+      }
+    ]
+  },
+  "faq_retrieval": {
+    "summary": {
+      "n_queries": 15,
+      "MRR": 0.0,
+      "hit_rate@1": 0.0,
+      "hit_rate@3": 0.0,
+      "hit_rate@5": 0.0
+    },
+    "per_query": [
+      {
+        "query": "Can I sell open parking spaces to flat buyers?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "What happens if a promoter doesn't register their project at all?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "How do I find out if a project I'm interested in is actually registered with MahaRERA?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "Does the promoter have to commit to a completion deadline when registering a project?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "If MahaRERA cancels a builder's registration, what happens to buyers who already paid?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "Am I automatically entitled to interest if my possession is delayed, or do I need to do something?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "Is there a cap on how much interest a builder can charge me if I miss an installment payment?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "Can I sue my builder in a regular civil court instead of going to MahaRERA?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "How do I appeal a MahaRERA order I disagree with, and what does it cost?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "By when must the builder help set up a housing society for the flat owners?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "How long after getting the occupancy certificate does the builder have to transfer ownership via conveyance deed?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "What is the legal remedy for property fraud in India?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "How can I verify that a seller actually owns the property before I buy it?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "What's the process to transfer property after someone dies without a will?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      },
+      {
+        "query": "What tax do I need to pay when I sell a property?",
+        "reciprocal_rank": 0.0,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false
+      }
+    ]
+  }
+}
