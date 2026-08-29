@@ -3,14 +3,22 @@
 ## Code
 The source code in this repository is licensed under MIT — see `LICENSE`.
 
-## Model: InLegalBERT
-This project uses [law-ai/InLegalBERT](https://huggingface.co/law-ai/InLegalBERT),
-released under the MIT License by its authors. Base model weights are
-downloaded directly from Hugging Face at setup time and are not redistributed
-in this repository. The fine-tuned checkpoints in `legalis_model/` and
-`faq_model/` (gitignored, not published) are derived from InLegalBERT.
+## Model: e5-base-v2
+Retrieval currently runs on [intfloat/e5-base-v2](https://huggingface.co/intfloat/e5-base-v2),
+released under the MIT License by its authors, used unmodified (no fine-tuning).
+Weights are downloaded directly from Hugging Face at setup time and are not
+redistributed in this repository. See `eval/` for retrieval-quality measurements
+against the previous embedding approach.
 
-If you use this project or its approach, please also cite the original work:
+> Wang, L., Yang, N., Huang, X., Jiao, B., Yang, L., Jiang, D., Majumder, R., &
+> Wei, F. (2022). Text Embeddings by Weakly-Supervised Contrastive
+> Pre-training. *arXiv:2212.03533*.
+
+### Previously evaluated: InLegalBERT
+Earlier versions of this project used [law-ai/InLegalBERT](https://huggingface.co/law-ai/InLegalBERT)
+(MIT License), mean-pooled with no fine-tuning applied. The eval harness showed
+this performed substantially worse than e5-base-v2 on this dataset — it is no
+longer part of the live retrieval pipeline. If referencing that approach, cite:
 
 > Paul, S., Mandal, A., Goyal, P., & Ghosh, S. (2023). Pre-trained Language
 > Models for the Legal Domain: A Case Study on Indian Law. *Proceedings of the
