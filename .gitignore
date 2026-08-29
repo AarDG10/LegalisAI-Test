@@ -1,11 +1,7 @@
-cases.json
-legal_cases.json
 __pycache__
-legalis_model
 results
-finalcases.json
-trainer.py
-QandA.jsonl
-faq_model
 Data
-Frontend/legalis_ui/node_modules
+/legalis_model
+/faq_model
+/trainer.py
+.venv

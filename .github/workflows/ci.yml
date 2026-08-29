@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pre-commit
+      - run: pre-commit run --all-files
+
+  retrieval-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: legalis_api/requirements.txt
+      - run: pip install -r legalis_api/requirements.txt
+      # Real case/FAQ data is intentionally not published (see NOTICE.md) and
+      # is not available in CI. This uses tiny synthetic fixture data to prove
+      # the retrieval pipeline still imports, starts, and returns
+      # correctly-shaped results -- it does NOT measure retrieval quality.
+      # Quality is measured locally against the real dataset via
+      # eval/run_eval.py; see eval/eval_results_*.json for those numbers.
+      - name: Stage fixture data
+        run: |
+          mkdir -p Data
+          cp .github/fixtures/finalcases.json Data/finalcases.json
+          cp .github/fixtures/QandA.jsonl Data/QandA.jsonl
+      - run: python eval/smoke_test.py
