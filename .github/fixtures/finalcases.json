@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "fixture_001",
+    "case_title": "CI Fixture Case One",
+    "case_description": "Synthetic fixture case used only to smoke-test the retrieval pipeline in CI. Not real case data.",
+    "case_link": "https://example.com/fixture-1",
+    "sections": [
+      {
+        "section_id": "section_001",
+        "section_title": "Fixture Section",
+        "section_description": "Synthetic section text used only for CI smoke testing."
+      }
+    ],
+    "strong_points": ["Fixture strong point."],
+    "weak_points": ["Fixture weak point."]
+  },
+  {
+    "case_id": "fixture_002",
+    "case_title": "CI Fixture Case Two",
+    "case_description": "A second synthetic fixture case, distinct wording, still only for CI smoke testing.",
+    "case_link": "https://example.com/fixture-2",
+    "sections": [
+      {
+        "section_id": "section_001",
+        "section_title": "Another Fixture Section",
+        "section_description": "More synthetic section text for CI smoke testing."
+      }
+    ],
+    "strong_points": ["Another fixture strong point."],
+    "weak_points": ["Another fixture weak point."]
+  }
+]
