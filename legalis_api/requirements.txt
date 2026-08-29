@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-torch
-transformers
+sentence-transformers
 numpy
 scikit-learn
 jsonlines

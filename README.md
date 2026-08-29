@@ -1,15 +1,21 @@
 # LegalisAI: Real Estate Legal Case Assistant
-A specialized legal assistant leveraging the power of the **InLegalBERT** model to respond to user queries related to real estate cases (Info. Retrieval + Deep Learning Model) based solution.
+A retrieval-based legal assistant that surfaces similar past MahaRERA case outcomes,
+strong/weak points, and relevant RERA sections for a user's real estate dispute
+(Information Retrieval, not fine-tuned/trained on this data — see `NOTICE.md`).
 
 ---
 
-## 🔧 **Principal Architecture** (Model + Training)
-1. **Model:** [InLegalBERT Model](https://huggingface.co/law-ai/InLegalBERT)
-2. **Training Data:** Real Estate Legal Cases Dataset
+## 🔧 **Principal Architecture**
+1. **Embedding model:** [intfloat/e5-base-v2](https://huggingface.co/intfloat/e5-base-v2)
+   — pretrained sentence-embedding model, used as-is (no fine-tuning). See
+   `eval/` for retrieval-quality measurements.
+2. **Corpus:** curated MahaRERA case summaries + RERA FAQ pairs (not published — see `NOTICE.md`).
 
 ## 🧱 **Stack**
-- `legalis_api/` — FastAPI backend: owns the models, embeddings, and retrieval logic.
+- `legalis_api/` — FastAPI backend: embedding model, precomputed retrieval index, retrieval logic.
 - `app.py` — Streamlit UI, calls the FastAPI backend over HTTP. Run the API first, then this.
+- `eval/` — retrieval-quality eval harness (hand-labeled queries + Hit@k/MRR scoring). Run
+  `python eval/run_eval.py` before and after any retrieval change to measure impact.
 
 ## ▶️ **Running it**
 ```bash
@@ -24,7 +30,8 @@ cd legalis_api && uvicorn main:app --reload
 # terminal 2
 streamlit run app.py
 ```
-Requires `legalis_model/`, `faq_model/`, and `Data/` (gitignored) present at the repo root — see `.gitignore`.
+Requires `Data/` (gitignored) present at the repo root — see `.gitignore`. The embedding
+model downloads automatically from Hugging Face on first run.
 
 ---
 

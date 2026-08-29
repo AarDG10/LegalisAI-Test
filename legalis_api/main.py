@@ -2,9 +2,8 @@ import json
 import jsonlines
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-import torch
-from transformers import AutoTokenizer, AutoModel
 import numpy as np
+from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import logging
 
@@ -15,18 +14,11 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Paths to your models
-legalis_model_path = "../legalis_model"
-faq_model_path = "../faq_model"
-
-# Load tokenizers and models for both Legalis and FAQ
-tokenizer_legalis = AutoTokenizer.from_pretrained(legalis_model_path)
-model_legalis = AutoModel.from_pretrained(legalis_model_path)
-model_legalis.eval()
-
-tokenizer_faq = AutoTokenizer.from_pretrained(faq_model_path)
-model_faq = AutoModel.from_pretrained(faq_model_path)
-model_faq.eval()
+# A single pretrained sentence-embedding model serves both cases and FAQs.
+# e5 models expect a "query: " / "passage: " prefix on the input text to get
+# good asymmetric (short query vs. longer document) retrieval quality.
+EMBEDDING_MODEL_NAME = "intfloat/e5-base-v2"
+embedding_model = SentenceTransformer(EMBEDDING_MODEL_NAME)
 
 # Load Legalis Data from JSON
 try:
@@ -52,23 +44,23 @@ class TextRequest(BaseModel):
     model_choice: str = Field(..., pattern="^(legalis|faq)$", example="legalis")
 
 
-# Encode a batch of texts in a single forward pass.
-def encode_texts(texts, tokenizer, model):
+def encode_passages(texts):
     if not texts:
-        return np.empty((0, model.config.hidden_size), dtype=np.float32)
-    inputs = tokenizer(
-        texts, return_tensors="pt", truncation=True, padding=True, max_length=512
+        return np.empty(
+            (0, embedding_model.get_sentence_embedding_dimension()), dtype=np.float32
+        )
+    return embedding_model.encode(
+        [f"passage: {t}" for t in texts], convert_to_numpy=True
     )
-    with torch.no_grad():
-        outputs = model(**inputs)
-    return outputs.last_hidden_state.mean(dim=1).numpy()
+
+
+def encode_query(text):
+    return embedding_model.encode([f"query: {text}"], convert_to_numpy=True)
 
 
 # --- Precompute embeddings once at startup instead of on every request ---
 
-case_vectors = encode_texts(
-    [case["case_description"] for case in cases_data], tokenizer_legalis, model_legalis
-)
+case_vectors = encode_passages([case["case_description"] for case in cases_data])
 
 # Flatten all case sections into one batch, embed once, then split back per case.
 _section_counts = [len(case["sections"]) for case in cases_data]
@@ -77,9 +69,7 @@ _all_section_texts = [
     for case in cases_data
     for section in case["sections"]
 ]
-_all_section_vectors = encode_texts(
-    _all_section_texts, tokenizer_legalis, model_legalis
-)
+_all_section_vectors = encode_passages(_all_section_texts)
 
 section_vectors_per_case = []
 _offset = 0
@@ -87,18 +77,16 @@ for count in _section_counts:
     section_vectors_per_case.append(_all_section_vectors[_offset : _offset + count])
     _offset += count
 
-faq_vectors = encode_texts(
-    [faq["prompt"] for faq in faq_data], tokenizer_faq, model_faq
-)
+faq_vectors = encode_passages([faq["prompt"] for faq in faq_data])
 
 logger.info(
-    f"Precomputed embeddings for {len(cases_data)} cases and {len(faq_data)} FAQs."
+    f"Precomputed embeddings for {len(cases_data)} cases and {len(faq_data)} FAQs using {EMBEDDING_MODEL_NAME}."
 )
 
 
 # Function to find relevant cases (Legalis) with most similar sections
 def find_relevant_cases(user_input, num_results=5):
-    query_vector = encode_texts([user_input], tokenizer_legalis, model_legalis)
+    query_vector = encode_query(user_input)
     similarities = cosine_similarity(query_vector, case_vectors).flatten()
 
     top_indices = np.argsort(similarities)[-num_results:][::-1]
@@ -134,7 +122,7 @@ def find_relevant_cases(user_input, num_results=5):
 
 # Function to find relevant FAQs (FAQ Model)
 def find_relevant_faq(query, num_results=5):
-    query_vector = encode_texts([query], tokenizer_faq, model_faq)
+    query_vector = encode_query(query)
     similarities = cosine_similarity(query_vector, faq_vectors).flatten()
 
     top_indices = np.argsort(similarities)[-num_results:][::-1]
